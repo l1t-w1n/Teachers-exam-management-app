@@ -1,0 +1,215 @@
+<!DOCTYPE HTML>
+<!--
+	Editorial by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+
+<head>
+	<title>Éditer une question</title>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+	<link rel="stylesheet" href="{{ url_for('static', filename='css/main.css') }}" />
+	<link rel="stylesheet" href="{{ url_for('static', filename='css/prism.css') }}" />
+	<link rel="icon" type="image/x-icon" href="{{ url_for('static', filename='images/favicon.ico') }}">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css"
+		integrity="sha512-SzlrxWUlpfuzQ+pcUCosxcglQRNAq/DZjVsC0lE40xsADsfeQoEypE+enwcOiGjk/bSuGGKHEyjSoQ1zVisanQ=="
+		crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+</head>
+
+<body class="is-preload">
+
+	<!-- Wrapper -->
+	<div id="wrapper">
+
+		<!-- Main -->
+		<div id="main">
+			<div class="inner">
+
+				<!-- Header -->
+				<header id="header">
+					<a href="/" class="logo"><strong>JetQuiz</strong></a>
+					<ul class="icons" id="button-login">
+					</ul>
+				</header>
+
+				<!-- Content -->
+				<section>
+					<p id="box">
+					<header class="main" id="title">
+					</header>
+
+					<!-- Content -->
+					<header class="major"><h2 id="content">Éditeur</h2></header>
+					<p>
+						Type de la question:
+					</p>
+					<form onsubmit="return false;">
+						<div id="qtype-radio">
+							<div class="col-4 col-12-small">
+								<input type="radio" id="qcm" name="qtype" value="qcm" checked/>
+								<label for="qcm">QCM</label>
+								</div>
+							
+								<div class="col-4 col-12-small">
+								<input type="radio" id="num" name="qtype" value="num"/>
+								<label for="num">Numérique</label>
+								</div>
+
+								<div class="col-4 col-12-small">
+									<input type="radio" id="opn" name="qtype" value="opn"/>
+									<label for="opn">Ouverte</label>
+									</div>
+						</div>
+						<div class="row">
+							<div class="col-6 col-12-small">
+								<h3>Énonce de la question</h3>
+								<center>
+									<div class="md-buttons">
+										<a class="button small icon solid fa-bold" id="bold">gras</a>
+										<a class="button small icon solid fa-italic" id="italic">italic</a>
+										<a class="button small icon solid fa-calculator" id="latex">latex</a>
+										<a class="button small icon solid fa-diagram-succesor" id="mermaid2">mermaid</a>
+										<a class="button small icon solid fa-code" id="code">code</a>
+									</div>
+								</center>
+								<br>
+								<textarea class="bigtext enonce" rows="10" id="enonce"
+									placeholder="Veuillez saisir l'énoncé de la question..."
+									style="resize: none;"></textarea>
+							</div>
+							<div class="col-6 col-12-small">
+								<h3 id="input-title"></h3>
+								<p id="input-answer">
+									<ul id="answers" style="list-style: none; padding-inline-start: 0px;"></ul>
+									<div id="button-answers"></div>
+								</p>
+							</div>
+						</div>
+						<br>
+						<center>
+							<button type="button" class="render-button" onclick="renderAll()">Afficher
+								l'aperçu</button><br>
+							<br>
+							<input class="submit-button primary button" type="submit" id="submit" value="Sauvegarder" />
+						</center>
+					</form>
+					<hr class="major" />
+
+					<!-- Content -->
+					<header class="major"><h2 id="content">Aperçu</h2></header>
+					<div class="row">
+						<div class="col-6 col-12-small">
+							<h3>Énonce de la question</h3>
+							<div id="output" class="enonce output box"></div>
+						</div>
+						<div class="col-6 col-12-small">
+							<h3 id="output-title"></h3>
+							<br>
+							<div id="output-answer">
+								<div id="output-input"></div>
+								<ul id="output-answers" style="list-style: none;"></ul>
+							</div>
+							</p>
+						</div>
+					</div>
+
+					<hr class="major" />
+
+					<!-- Content -->
+				<header class="major"><h2 id="content">Les étiquettes</h2></header>
+				<div class="row">
+					<div class="col-6 col-12-small">
+						<h3>Étiquettes ajoutées</h3>
+						<ul class="selector" id="selected-tags"></ul>
+					</div>
+					<div class="col-6 col-12-small">
+						<h3>Autres étiquettes</h3>
+						<ul class="selector" id="not-selected-tags"></ul>
+						<textarea class="bigtext enonce" rows="1" id="new-tag-input"
+						placeholder="Veuillez saisir le nom de la nouvelle étiquette..."
+						style="resize: none;"></textarea></br>
+						<center><a class="button primary icon solid fa-plus" id="add-tag-button">Ajouter l'étiquette</a></center>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<!-- Sidebar -->
+		<div id="sidebar">
+			<div class="inner">
+
+				<!-- Search -->
+				<section id="search" class="alt">
+					<!-- <form method="post" action="#">
+										<input type="text" name="query" id="query" placeholder="Search" />
+									</form> -->
+					<img src="{{ url_for('static', filename='images/logo.png') }}" width="200vw">
+				</section>
+
+				<!-- Menu -->
+				<nav id="menu">
+					<header class="major">
+						<h2>Menu Principal</h2>
+					</header>
+					<ul id="menu-list">
+					</ul>
+				</nav>
+
+				<!-- Section -->
+				<section>
+					<header class="major">
+						<h2>À propos</h2>
+					</header>
+					<p>Ce site a été créé dans le cadre d'un projet universitaire.</p>
+					<ul class="actions">
+						<li><a href="/about" class="button">En savoir plus</a></li>
+					</ul>
+				</section>
+
+				<!-- Section -->
+				<section>
+					<header class="major">
+						<h2>Notre équipe</h2>
+					</header>
+					<div class="mini-posts">
+						<article>
+							<p>Nous sommes un groupe de 4 étudiants de deuxième année d'informatique à l'université de
+								Montpellier.</p>
+						</article>
+					</div>
+					<ul class="actions">
+						<li><a href="/team" class="button">En savoir plus</a></li>
+					</ul>
+				</section>
+
+				<!-- Footer -->
+				<footer id="footer">
+					<p class="copyright">&copy; JetQuiz. All rights reserved. Demo Images: <a
+							href="https://unsplash.com">Unsplash</a>. Design: <a href="https://html5up.net">HTML5
+							UP</a>.</p>
+				</footer>
+
+			</div>
+		</div>
+
+	</div>
+
+	<!-- Scripts -->
+	<script src="{{ url_for('static', filename='js/jquery.min.js') }}"></script>
+	<script src="{{ url_for('static', filename='js/browser.min.js') }}"></script>
+	<script src="{{ url_for('static', filename='js/breakpoints.min.js') }}"></script>
+	<script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+	<script src="https://cdn.jsdelivr.net/npm/mermaid@8.8.2/dist/mermaid.min.js"></script>
+	<script defer src="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.js"></script>
+	<script src="{{ url_for('static', filename='js/prism.js') }}"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/4.5.4/socket.io.js"></script>
+	<script>var socket = io();</script>
+	<script src="{{ url_for('static', filename='js/question.js') }}"></script>
+	<script src="{{ url_for('static', filename='js/main.js') }}"></script>
+	<script src="{{ url_for('static', filename='js/style.js') }}"></script>
+</body>
+
+</html>

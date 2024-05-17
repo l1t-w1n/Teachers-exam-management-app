@@ -1,0 +1,45 @@
+Webographie:
+
+KaTeX
+https://katex.org/
+
+Mermaid
+https://mermaid.js.org/#/
+
+Prism
+https://prismjs.com/
+
+JQuery
+https://jquery.com/
+
+Marked
+https://marked.js.org/
+
+SQLite3
+https://www.sqlite.org/index.html
+
+jsPDF
+https://github.com/parallax/jsPDF
+
+PapaParse
+https://www.papaparse.com/
+
+A Pen by Prashant:
+https://codepen.io/Prashant-op/pen/jOxNWRL
+
+Login Form with floating placeholder and light button by Soufiane Khalfaoui HaSsani:
+https://codepen.io/soufiane-khalfaoui-hassani/pen/LYpPWda
+
+CSS grid toggle by Liam
+https://codepen.io/liamj/pen/QYyBzz
+
+Candy Color Button Animation by Yuhomyan
+https://codepen.io/yuhomyan/pen/OJMejWJ
+
+Graphics Designed By smashingstocks
+https://lovepik.com/image-450126204/trendy-flat-illustration-design-of-online-exam.html
+https://lovepik.com/image-450092721/online-test-flat-illustration-editable-vector.html
+https://lovepik.com/image-450098997/account-login-flat-illustration.html
+
+Fontawesome
+https://fontawesome.com/

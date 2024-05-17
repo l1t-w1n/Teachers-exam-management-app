@@ -1,0 +1,87 @@
+#print {
+    background-color: #3a6df0;
+    border: none;
+    padding: 8px 26px;
+    color: #fff;
+    border-radius: 20px;
+    margin-top: 16px;
+    cursor: pointer;
+    transition: 0.3s;
+    white-space: nowrap;
+}
+
+#questions{
+    background-color: transparent;
+}
+
+#numq{
+    border-bottom: 1px solid var(--border-color);
+}
+
+#visualiser{
+    font-size: 80%;
+    
+    font-weight: 200;
+}
+
+#enonce{
+	display: flex;
+	flex-direction: column;
+	width: 100%;
+	height: auto;
+	justify-content: space-around;
+	background-color: var(--content-bg);
+	padding-left: 20px;
+	margin-top: 20px;
+	border-radius: 14px;
+	border: 1px solid var(--theme-bg-color);
+}
+
+.visualiser {
+    pointer-events: none;
+    background-color: transparent;
+}
+
+.visualiser .enonce {
+    padding: auto;
+}
+
+.visualiser #code {
+    display: block;
+}
+
+.visualiser svg {
+    width: 100vw;
+    height: 100vh;
+}
+
+.selector li {
+    position: relative;
+    display: flex;
+    align-items: center; 
+}
+
+.selector li a{
+    position : absolute;
+    right:0;margin : auto;
+}
+
+.content-wrapper {
+    overflow: auto;
+}
+
+li {
+    position: relative; /* pour permettre un positionnement absolu sur les SVG enfants */
+}
+
+li svg {
+    position: absolute; /* pour positionner les SVG en dehors du flux normal */
+    right: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    color : rgba(0, 128, 0, 0.700)
+} 
+
+#questions{
+    background-color: transparent;
+}

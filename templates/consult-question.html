@@ -1,0 +1,138 @@
+<!DOCTYPE HTML>
+<!--
+	Editorial by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+
+<head>
+	<title>Votre banque de questions</title>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+	<link rel="stylesheet" href="{{ url_for('static', filename='css/main.css') }}" />
+	<link rel="icon" type="image/x-icon" href="{{ url_for('static', filename='images/favicon.ico') }}">
+</head>
+
+<body class="is-preload">
+
+	<!-- Wrapper -->
+	<div id="wrapper">
+
+		<!-- Main -->
+		<div id="main">
+			<div class="inner">
+
+				<!-- Header -->
+				<header id="header">
+					<a href="/" class="logo"><strong>JetQuiz</strong></a>
+					<ul class="icons" id="button-login">
+					</ul>
+				</header>
+
+				<!-- Banner -->
+				<section id="banner">
+					<div class="content">
+						<header>
+							<h1>Ma banque de questions</h1>
+							<p>Créez en toute simplicité vos propres questions personnalisées.</p>
+						</header>
+						<p>Créez des questions à choix multiples ou numériques afin de pouvoir les ajouter à vos
+							prochains quiz! Assignez leur des étiquettes afin de pouvoir les filtrer plus rapidement.
+						</p>
+						<ul class="actions">
+							<li><a href="/question?action=create" class="primary button">Créer une question</a></li>
+							<li><a href="#questions" class="button">Consulter mes questions</a></li>
+						</ul>
+					</div>
+					<span class="image object">
+						<img src="{{ url_for('static', filename='images/consult.png') }}" alt="" />
+					</span>
+				</section>
+
+
+				<!-- Section -->
+				<section id="questions">
+					<header class="major">
+						<h2>Mes questions</h2>
+					</header>
+					<input type="text" name="query" id="tag-search" placeholder="Chercher par étiquette"><br>
+					<nav id="menu">
+						<ul id="questions-list">
+						</ul>
+					</nav>
+				</section>
+
+			</div>
+		</div>
+
+		<!-- Sidebar -->
+		<div id="sidebar">
+			<div class="inner">
+
+				<!-- Search -->
+				<section class="alt">
+					<img src="{{ url_for('static', filename='images/logo.png') }}" width="200vw">
+				</section>
+
+				<!-- Menu -->
+				<nav id="menu">
+					<header class="major">
+						<h2>Menu Principal</h2>
+					</header>
+					<ul id="menu-list">
+					</ul>
+				</nav>
+
+				<!-- Section -->
+				<section>
+					<header class="major">
+						<h2>À propos</h2>
+					</header>
+					<p>Ce site a été créé dans le cadre d'un projet universitaire.</p>
+					<ul class="actions">
+						<li><a href="/about" class="button">En savoir plus</a></li>
+					</ul>
+				</section>
+
+				<!-- Section -->
+				<section>
+					<header class="major">
+						<h2>Notre équipe</h2>
+					</header>
+					<div class="mini-posts">
+						<article>
+							<p>Nous sommes un groupe de 4 étudiants de deuxième année d'informatique à l'université de
+								Montpellier.</p>
+						</article>
+					</div>
+					<ul class="actions">
+						<li><a href="/team" class="button">En savoir plus</a></li>
+					</ul>
+				</section>
+
+				<!-- Footer -->
+				<footer id="footer">
+					<p class="copyright">&copy; JetQuiz. All rights reserved. Demo Images: <a
+							href="https://unsplash.com">Unsplash</a>. Design: <a href="https://html5up.net">HTML5
+							UP</a>.</p>
+				</footer>
+
+			</div>
+		</div>
+
+	</div>
+
+	<!-- Scripts -->
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/4.5.4/socket.io.js"></script>
+	<script src="{{ url_for('static', filename='js/jquery.min.js') }}"></script>
+	<script src="{{ url_for('static', filename='js/browser.min.js') }}"></script>
+	<script src="{{ url_for('static', filename='js/breakpoints.min.js') }}"></script>
+	<script>var socket = io();</script>
+	<script src="{{ url_for('static', filename='js/consult.js') }}"></script>
+	<script src="{{ url_for('static', filename='js/main.js') }}"></script>
+	<script src="{{ url_for('static', filename='js/style.js') }}"></script>
+
+</body>
+
+</html>

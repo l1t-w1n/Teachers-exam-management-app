@@ -1,0 +1,159 @@
+<!DOCTYPE HTML>
+<!--
+	Editorial by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+
+<head>
+	<title>Votre compte</title>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+	<link rel="stylesheet" href="{{ url_for('static', filename='css/main.css') }}" />
+	<link rel="icon" type="image/x-icon" href="{{ url_for('static', filename='images/favicon.ico') }}">
+</head>
+
+<body class="is-preload">
+
+	<!-- Wrapper -->
+	<div id="wrapper">
+
+		<!-- Main -->
+		<div id="main">
+			<div class="inner">
+
+				<!-- Header -->
+				<header id="header">
+					<a href="/" class="logo"><strong>JetQuiz</strong></a>
+					<ul class="icons" id="button-login">
+					</ul>
+				</header>
+
+				<!-- Banner -->
+				<section id="banner">
+					<div class="content">
+						<header>
+							<h1>Votre compte</h1>
+						</header>
+						<p>
+							<center>Bonjour, {{name}}, voici les informations concernant votre compte :</center>
+						</p>
+						<p>
+						<div class="account-box">
+							<div>
+								<div class="user-box">
+									<label> Nom : </label>
+									<input type="text" name="last_name" id="last_name" value="{{last_name}}" required />
+								</div>
+								<br>
+								<div class="user-box">
+									<label> Prénom : </label>
+									<input type="text" name="first_name" id="first_name" value="{{first_name}}"
+										required />
+								</div>
+								<br>
+								<div class="user-box">
+									<label> Email : </label>
+									<input type="email" name="email" id="email" value="{{identifier}}" required />
+								</div>
+								<br>
+								<div class="user-box">
+									<label> Mot de passe actuel : </label>
+									<input type="password" name="password" id="password" required />
+								</div>
+								<br>
+								<div class="user-box">
+									<form onsubmit="return false;">
+										<input type="checkbox" id="newPassCheck" onclick="newPass(this);">
+										<label for="newPassCheck"> Changer le mot de passe </label>
+									</form>
+								</div>
+								<div class="user-box" id="newPassBox" hidden>
+									<label> Nouveau mot de passe : </label>
+									<input type="password" name="newPassword" id="new_password" />
+								</div>
+								<br>
+								<center><input class="submit" id="submit" type="submit" value="Enregistrer" /></center>
+
+							</div>
+							</p>
+						</div>
+				</section>
+
+			</div>
+		</div>
+
+		<!-- Sidebar -->
+		<div id="sidebar">
+			<div class="inner">
+
+				<!-- Search -->
+				<section id="search" class="alt">
+					<!-- <form method="post" action="#">
+										<input type="text" name="query" id="query" placeholder="Search" />
+									</form> -->
+					<img src="{{ url_for('static', filename='images/logo.png') }}" width="200vw">
+				</section>
+
+				<!-- Menu -->
+				<nav id="menu">
+					<header class="major">
+						<h2>Menu Principal</h2>
+					</header>
+					<ul id="menu-list">
+					</ul>
+				</nav>
+
+				<!-- Section -->
+				<section>
+					<header class="major">
+						<h2>À propos</h2>
+					</header>
+					<p>Ce site a été créé dans le cadre d'un projet universitaire.</p>
+					<ul class="actions">
+						<li><a href="/about" class="button">En savoir plus</a></li>
+					</ul>
+				</section>
+
+				<!-- Section -->
+				<section>
+					<header class="major">
+						<h2>Notre équipe</h2>
+					</header>
+					<div class="mini-posts">
+						<article>
+							<p>Nous sommes un groupe de 4 étudiants de deuxième année d'informatique à l'université de
+								Montpellier.</p>
+						</article>
+					</div>
+					<ul class="actions">
+						<li><a href="/team" class="button">En savoir plus</a></li>
+					</ul>
+				</section>
+
+				<!-- Footer -->
+				<footer id="footer">
+					<p class="copyright">&copy; JetQuiz. All rights reserved. Demo Images: <a
+							href="https://unsplash.com">Unsplash</a>. Design: <a href="https://html5up.net">HTML5
+							UP</a>.</p>
+				</footer>
+
+			</div>
+		</div>
+
+	</div>
+
+	<!-- Scripts -->
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/4.5.4/socket.io.js"></script>
+	<script src="{{ url_for('static', filename='js/jquery.min.js') }}"></script>
+	<script src="{{ url_for('static', filename='js/browser.min.js') }}"></script>
+	<script src="{{ url_for('static', filename='js/breakpoints.min.js') }}"></script>
+	<script>var socket = io();</script>
+	<script src="{{ url_for('static', filename='js/account.js') }}"></script>
+	<script src="{{ url_for('static', filename='js/main.js') }}"></script>
+	<script src="{{ url_for('static', filename='js/style.js') }}"></script>
+
+</body>
+
+</html>

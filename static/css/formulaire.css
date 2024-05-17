@@ -1,0 +1,73 @@
+.full-page {
+    display: flex;
+    width: 100vw;
+    height: 92vh;
+    align-items: center;
+    justify-content: center;
+    flex-direction: row;
+    gap: 3em;
+    color: white;
+}
+
+.login {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 10em;
+}
+
+.illustration{
+    width : 40vw;
+}
+
+.form {
+    align-self: center;
+    background-color: rgba(255, 255, 255, 1);
+    width: 50%;
+    padding: 20px;
+    border-radius: 0.4em;
+    color: black;
+    filter: drop-shadow(0 10px 8px rgba(0, 0, 0, 0.2)) drop-shadow(0 4px 3px rgba(0, 0, 0, 0.1));;
+}
+
+.form #submit {
+    background-color: #4c3e87;
+    color : white;
+    filter: drop-shadow(0 10px 8px rgba(0, 0, 0, 0.2)) drop-shadow(0 4px 3px rgba(0, 0, 0, 0.1));;
+    padding-left: 1.3em;
+    padding-right: 1.3em;
+    padding-top: 0.5em;
+    padding-bottom: 0.5em;
+    border-radius: 0.4em;
+    margin-top: 0.5em;
+    font-size: 1em;
+    transition: 0.2s;
+}
+.form #submit:hover {
+    background-color: #605495;
+    color : white;
+    filter: drop-shadow(0 10px 8px rgba(0, 0, 0, 0.2)) drop-shadow(0 4px 3px rgba(0, 0, 0, 0.1));;
+    padding-left: 1.3em;
+    padding-right: 1.3em;
+    padding-top: 0.5em;
+    padding-bottom: 0.5em;
+    border-radius: 0.4em;
+    margin-top: 0.5em;
+    font-size: 1em;
+    transition: 0.2s;
+    cursor: pointer;
+}
+
+.u-text {
+    text-decoration: underline;
+    text-underline-offset: 0.1em;
+}
+
+    
+.auth-input {
+    padding: 0.5em;
+    border:1px solid black;
+    border-radius: 0.5em;
+    margin: 10px;
+}

@@ -1,0 +1,140 @@
+<!DOCTYPE HTML>
+<!--
+	Editorial by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial  use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+
+<head>
+	<title>Participez à une session</title>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+	<link rel="stylesheet" href="{{ url_for('static', filename='css/main.css') }}" />
+	<link rel="stylesheet" href="{{ url_for('static', filename='css/prism.css') }}" />
+	<link rel="icon" type="image/x-icon" href="{{ url_for('static', filename='images/favicon.ico') }}">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css"
+		integrity="sha512-SzlrxWUlpfuzQ+pcUCosxcglQRNAq/DZjVsC0lE40xsADsfeQoEypE+enwcOiGjk/bSuGGKHEyjSoQ1zVisanQ=="
+		crossorigin="anonymous" referrerpolicy="no-referrer" />
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet"
+		integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+
+</head>
+
+<body class="is-preload">
+
+	<!-- Wrapper -->
+	<div id="wrapper">
+
+		<!-- Main -->
+		<div id="main">
+			<div class="inner">
+
+				<!-- Header -->
+				<header id="header">
+					<a href="/" class="logo"><strong>JetQuiz</strong></a>
+					<ul class="icons" id="button-login">
+					</ul>
+				</header>
+
+				<!-- Content -->
+				<section>
+					<!-- Content -->
+					<div id="top">
+						<h2 id="id-session"></h2>
+						<div id="info-text">
+						</div>
+					</div>
+					<br>
+					<h2 id="numero-question"></h2>
+					<div id="statement-box">
+					</div>
+					<form onsubmit="return false;">
+						<div id="answers">
+						</div>
+					</form>
+					<div id="buttons">
+					</div>
+				</section>
+			</div>
+		</div>
+
+		<!-- Sidebar -->
+		<div id="sidebar">
+			<div class="inner">
+
+				<!-- Search -->
+				<section id="search" class="alt">
+					<!-- <form method="post" action="#">
+										<input type="text" name="query" id="query" placeholder="Search" />
+									</form> -->
+					<img src="{{ url_for('static', filename='images/logo.png') }}" width="200vw">
+				</section>
+
+				<!-- Menu -->
+				<nav id="menu">
+					<header class="major">
+						<h2>Menu Principal</h2>
+					</header>
+					<ul id="menu-list">
+					</ul>
+				</nav>
+
+				<!-- Section -->
+				<section>
+					<header class="major">
+						<h2>À propos</h2>
+					</header>
+					<p>Ce site a été créé dans le cadre d'un projet universitaire.</p>
+					<ul class="actions">
+						<li><a href="/about" class="button">En savoir plus</a></li>
+					</ul>
+				</section>
+
+				<!-- Section -->
+				<section>
+					<header class="major">
+						<h2>Notre équipe</h2>
+					</header>
+					<div class="mini-posts">
+						<article>
+							<p>Nous sommes un groupe de 4 étudiants de deuxième année d'informatique à l'université de
+								Montpellier.</p>
+						</article>
+					</div>
+					<ul class="actions">
+						<li><a href="/team" class="button">En savoir plus</a></li>
+					</ul>
+				</section>
+
+				<!-- Footer -->
+				<footer id="footer">
+					<p class="copyright">&copy; JetQuiz. All rights reserved. Demo Images: <a
+							href="https://unsplash.com">Unsplash</a>. Design: <a href="https://html5up.net">HTML5
+							UP</a>.</p>
+				</footer>
+
+			</div>
+		</div>
+
+	</div>
+
+	<!-- Scripts -->
+
+	<script src="https://d3js.org/d3.v7.min.js"></script>
+	<script src="https://unpkg.com/d3-cloud"></script>
+	<script src="{{ url_for('static', filename='js/jquery.min.js') }}"></script>
+	<script src="{{ url_for('static', filename='js/browser.min.js') }}"></script>
+	<script src="{{ url_for('static', filename='js/breakpoints.min.js') }}"></script>
+	<script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+	<script src="https://cdn.jsdelivr.net/npm/mermaid@8.8.2/dist/mermaid.min.js"></script>
+	<script defer src="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.js"></script>
+	<script src="{{ url_for('static', filename='js/prism.js') }}"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/4.5.4/socket.io.js"></script>
+	<script>var socket = io();</script>
+	<script src="{{ url_for('static', filename='js/session.js') }}"></script>
+	<script src="{{ url_for('static', filename='js/main.js') }}"></script>
+	<script src="{{ url_for('static', filename='js/style.js') }}"></script>
+</body>
+
+</html>

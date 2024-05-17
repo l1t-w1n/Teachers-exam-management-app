@@ -1,0 +1,31 @@
+li {
+    position: relative; /* pour permettre un positionnement absolu sur les SVG enfants */
+}
+li svg {
+    position: absolute; /* pour positionner les SVG en dehors du flux normal */
+    right: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    color : rgba(0, 128, 0, 0.700)
+} 
+#tag-name {
+    border: none;
+    background-color: var(--search-bg);
+    border-radius: 4px;
+    font-family: var(--body-font);
+    font-size: 15px;
+    font-weight: 500;
+    box-shadow: 0 0 0 2px rgb(134 140 160 / 2%);
+}
+
+.submit-button {
+    background-color: #3a6df0;
+    border: none;
+    padding: 8px 26px;
+    color: #fff;
+    border-radius: 20px;
+    margin-top: 16px;
+    cursor: pointer;
+    transition: 0.3s;
+    white-space: nowrap;
+  }
